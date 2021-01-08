@@ -2457,6 +2457,9 @@ component {
 
     private void function setupApplicationWrapper() {
         if ( structKeyExists( request._fw1, "appWrapped" ) ) return;
+        // Skip the process if it's an unhandled path
+        if ( isUnhandledRequest( request._fw1.cgiScriptName ) ) return;
+
         request._fw1.appWrapped = true;
         request._fw1.theApp = {
             cache = {
@@ -2992,7 +2995,7 @@ component {
 
     private void function setupSubsystemWrapper( string subsystem ) {
         if ( !len( subsystem ) ) return;
-        if ( !isSubsystemInitialized( subsystem ) ) {       
+        if ( !isSubsystemInitialized( subsystem ) ) {
             lock name="fw1_#application.applicationName#_#variables.framework.applicationKey#_subsysteminit_#subsystem#" type="exclusive" timeout="30" {
                 if ( !isSubsystemInitialized( subsystem ) ) {
                     getFw1App().subsystems[ subsystem ] = now();
