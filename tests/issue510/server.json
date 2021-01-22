@@ -1,0 +1,12 @@
+{
+    "name":"issue510",
+    "app":{
+        "cfengine":"adobe@2018"
+    },
+    "web":{
+        "http":{
+            "port":"51000"
+        }
+    },
+    "openBrowserURL":"http://localhost:51000/fw1/folder-with-dashes/includes/test.cfm"
+}

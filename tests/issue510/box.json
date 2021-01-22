@@ -1,0 +1,11 @@
+{
+    "name":"issue510",
+    "description":"An FW/1 application used for testing issue #510.",
+    "instructions":"From Commandbox, run 'box install && start' to get started.",
+    "dependencies":{
+        "fw1":"be"
+    },
+    "installPaths":{
+        "fw1":"fw1/folder-with-dashes/framework/"
+    }
+}
