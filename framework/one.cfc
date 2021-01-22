@@ -1,5 +1,5 @@
 component {
-    variables._fw1_version = "4.3.0-SNAPSHOT";
+    variables._fw1_version = "4.3.0-Beta2";
     /*
       Copyright (c) 2009-2018, Sean Corfield, Marcin Szczepanski, Ryan Cogswell
 
@@ -1893,7 +1893,7 @@ component {
         var nextPreserveKey = '';
         var oldKeyToPurge = '';
         try {
-            sessionLock(function(){
+            sessionLock(function() localmode = "classic" {
                 if ( variables.framework.maxNumContextsPreserved > 1 ) {
                     sessionDefault( '__fw1NextPreserveKey', 1 );
                     nextPreserveKey = sessionRead( '__fw1NextPreserveKey' );
